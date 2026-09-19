@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PDM Kiosk Portal (Unstyled Wireframe - main)</title>
+  <link rel="stylesheet" href="src/css/base.css">
+  <link rel="stylesheet" href="src/css/theme.css">
+  <link rel="stylesheet" href="src/css/layout.css">
+</head>
+<body>
+  <!-- Plain / Boring Wireframe View (Initial State on main) -->
+  <div style="max-width: 600px; margin: 40px auto; font-family: serif; line-height: 1.6; color: #111;">
+    
+    <!-- Top Status Notice -->
+    <div style="background: #f1f5f9; border: 1px solid #cbd5e1; padding: 10px 16px; font-family: sans-serif; font-size: 13px; margin-bottom: 20px;">
+      <strong>⚠️ STATUS:</strong> Initial Unstyled Prototype &bull; Branch: <code>main</code> &bull; Awaiting Volunteer Milestones
+    </div>
+
+    <!-- Header Section -->
+    <header>
+      <!-- Missing Logo Box (Student B Target) -->
+      <div style="border: 2px dashed #94a3b8; padding: 30px; text-align: center; margin-bottom: 16px; background: #fafafa; color: #64748b;">
+        <div style="font-size: 24px; margin-bottom: 6px;">🖼️</div>
+        <strong>[LOGO NOT MOUNTED]</strong>
+        <div style="font-size: 12px; margin-top: 4px;">Student B will stage and push <code>src/assets/pdm.png</code></div>
+      </div>
+
+      <h1 style="margin: 0 0 4px 0; font-size: 24px;">Pambayang Dalubhasaan ng Marilao</h1>
+      <p style="margin: 0 0 20px 0; color: #555; font-size: 15px;">Student Self-Service Authentication Kiosk (Wireframe)</p>
+    </header>
+
+    <hr style="border: 0; border-top: 1px solid #ddd; margin: 20px 0;">
+
+    <!-- Credentials Section (Student C Target) -->
+    <main>
+      <div style="border: 1px solid #ccc; padding: 20px; background: #ffffff;">
+        <h3 style="margin-top: 0; font-size: 18px;">Student Login</h3>
+        
+        <p style="margin: 12px 0 4px 0;">
+          <label for="student-id" style="font-size: 14px; font-weight: bold;">Student ID Number:</label><br>
+          <input type="text" id="student-id" placeholder="e.g. 2024-01048" style="width: 100%; padding: 6px; box-sizing: border-box; margin-top: 4px;">
+        </p>
+
+        <p style="margin: 12px 0 16px 0;">
+          <label for="password" style="font-size: 14px; font-weight: bold;">Password:</label><br>
+          <input type="password" id="password" placeholder="••••••••••••" style="width: 100%; padding: 6px; box-sizing: border-box; margin-top: 4px;">
+        </p>
+
+        <!-- Inactive Button (Student D Target) -->
+        <p style="margin: 0;">
+          <button type="button" id="login-btn" style="padding: 8px 18px; background: #e2e8f0; border: 1px solid #94a3b8; color: #64748b; font-size: 14px; cursor: not-allowed;" disabled>
+            Access Portal (Inactive)
+          </button>
+        </p>
+
+        <p style="font-size: 12px; color: #64748b; margin-top: 12px; margin-bottom: 0;">
+          💡 <em>Student A will apply the collegiate blue theme, Student C will build the credentials card, and Student D will activate this button.</em>
+        </p>
+      </div>
+    </main>
+
+    <hr style="border: 0; border-top: 1px solid #ddd; margin: 24px 0 16px 0;">
+
+    <!-- Footer -->
+    <footer style="font-size: 12px; color: #777;">
+      Pambayang Dalubhasaan ng Marilao &bull; IT31A Version Control Demo &bull; 4-Student Git Relay
+    </footer>
+
+  </div>
+
+  <script src="src/js/api.js"></script>
+  <script src="src/js/router.js"></script>
+  <script src="src/js/auth_button.js"></script>
+</body>
+</html>

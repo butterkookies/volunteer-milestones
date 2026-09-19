@@ -1,0 +1,53 @@
+/* ==========================================================================
+   PDM Kiosk Portal - Theme Styles (Student A: The Stylist)
+   Task: Style the tablet kiosk screen with PDM's collegiate blue gradient
+         theme and top status bar.
+   ========================================================================== */
+
+/* PDM Collegiate Theme Backdrop */
+.kiosk-viewport {
+  background: linear-gradient(135deg, #0052ff 0%, #1e40af 100%);
+  color: #ffffff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Tablet Top Status Bar */
+.status-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 28px;
+  font-weight: 800;
+  font-size: 15px;
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  letter-spacing: 0.02em;
+}
+
+.status-bar-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.status-bar-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-family: var(--font-mono);
+  font-size: 14px;
+}
+
+/* Accent highlights */
+.theme-badge {
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+}
