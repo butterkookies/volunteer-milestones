@@ -3,74 +3,113 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PDM Kiosk Portal (Unstyled Wireframe - main)</title>
+  <title>PDM Tablet Kiosk Portal - Student Relay Activity</title>
+  <link rel="icon" type="image/png" href="src/assets/pdm.png">
   <link rel="stylesheet" href="src/css/base.css">
   <link rel="stylesheet" href="src/css/theme.css">
   <link rel="stylesheet" href="src/css/layout.css">
 </head>
 <body>
-  <!-- Plain / Boring Wireframe View (Initial State on main) -->
-  <div style="max-width: 600px; margin: 40px auto; font-family: serif; line-height: 1.6; color: #111;">
+  <!-- Kiosk Viewport (Student A: Theme & Status Bar) -->
+  <div class="kiosk-viewport">
     
-    <!-- Top Status Notice -->
-    <div style="background: #f1f5f9; border: 1px solid #cbd5e1; padding: 10px 16px; font-family: sans-serif; font-size: 13px; margin-bottom: 20px;">
-      <strong>⚠️ STATUS:</strong> Initial Unstyled Prototype &bull; Branch: <code>main</code> &bull; Awaiting Volunteer Milestones
-    </div>
-
-    <!-- Header Section -->
-    <header>
-      <!-- Missing Logo Box (Student B Target) -->
-      <div style="border: 2px dashed #94a3b8; padding: 30px; text-align: center; margin-bottom: 16px; background: #fafafa; color: #64748b;">
-        <div style="font-size: 24px; margin-bottom: 6px;">🖼️</div>
-        <strong>[LOGO NOT MOUNTED]</strong>
-        <div style="font-size: 12px; margin-top: 4px;">Student B will stage and push <code>src/assets/pdm.png</code></div>
+    <!-- Top Status Bar -->
+    <header class="status-bar">
+      <div class="status-bar-left">
+        <span style="display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: #34d399; box-shadow: 0 0 10px #34d399;"></span>
+        <span>PDM KIOSK PORTAL &bull; TERMINAL 04</span>
+        <span class="theme-badge">IT31A LIVE LAB</span>
       </div>
-
-      <h1 style="margin: 0 0 4px 0; font-size: 24px;">Pambayang Dalubhasaan ng Marilao</h1>
-      <p style="margin: 0 0 20px 0; color: #555; font-size: 15px;">Student Self-Service Authentication Kiosk (Wireframe)</p>
+      <div class="status-bar-right">
+        <span>CAMPUS NETWORK: CONNECTED</span>
+        <span id="clock" style="font-weight: 700;">10:00 AM</span>
+      </div>
     </header>
 
-    <hr style="border: 0; border-top: 1px solid #ddd; margin: 20px 0;">
+    <!-- Main Container -->
+    <main class="kiosk-container">
+      
+      <!-- Brand Header & Crest (Student B: PDM Crest Asset) -->
+      <section class="brand-header">
+        <img src="src/assets/pdm.png" alt="PDM College Crest" class="brand-crest">
+        <h1 class="brand-title">Pambayang Dalubhasaan ng Marilao</h1>
+        <p class="brand-subtitle">Student Self-Service Authentication Kiosk</p>
+      </section>
 
-    <!-- Credentials Section (Student C Target) -->
-    <main>
-      <div style="border: 1px solid #ccc; padding: 20px; background: #ffffff;">
-        <h3 style="margin-top: 0; font-size: 18px;">Student Login</h3>
-        
-        <p style="margin: 12px 0 4px 0;">
-          <label for="student-id" style="font-size: 14px; font-weight: bold;">Student ID Number:</label><br>
-          <input type="text" id="student-id" placeholder="e.g. 2024-01048" style="width: 100%; padding: 6px; box-sizing: border-box; margin-top: 4px;">
-        </p>
+      <!-- View 1: Login Form (Student C: Credentials Form) -->
+      <section id="view-login">
+        <div class="credentials-card">
+          <div class="form-group">
+            <label for="student-id">Student ID Number</label>
+            <input type="text" id="student-id" placeholder="2024-01048" autocomplete="off" required>
+          </div>
 
-        <p style="margin: 12px 0 16px 0;">
-          <label for="password" style="font-size: 14px; font-weight: bold;">Password:</label><br>
-          <input type="password" id="password" placeholder="••••••••••••" style="width: 100%; padding: 6px; box-sizing: border-box; margin-top: 4px;">
-        </p>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="••••••••••••" required>
+          </div>
 
-        <!-- Inactive Button (Student D Target) -->
-        <p style="margin: 0;">
-          <button type="button" id="login-btn" style="padding: 8px 18px; background: #e2e8f0; border: 1px solid #94a3b8; color: #64748b; font-size: 14px; cursor: not-allowed;" disabled>
-            Access Portal (Inactive)
+          <!-- Interactive 3D Log In Button (Student D: Auth Button Action) -->
+          <button type="button" id="login-btn" class="login-btn">
+            <span>Access Portal</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14"></path>
+              <path d="m12 5 7 7-7 7"></path>
+            </svg>
           </button>
-        </p>
 
-        <p style="font-size: 12px; color: #64748b; margin-top: 12px; margin-bottom: 0;">
-          💡 <em>Student A will apply the collegiate blue theme, Student C will build the credentials card, and Student D will activate this button.</em>
-        </p>
-      </div>
+          <div id="login-alert" class="alert-box"></div>
+        </div>
+      </section>
+
+      <!-- View 2: Authenticated Student Dashboard -->
+      <section id="view-portal" style="display: none;">
+        <div class="credentials-card" style="max-width: 580px; text-align: center;">
+          <div style="width: 72px; height: 72px; border-radius: 50%; background: rgba(16, 185, 129, 0.2); border: 2px solid #10b981; margin: 0 auto 12px; display: flex; align-items: center; justify-content: center; color: #34d399;">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </div>
+
+          <h2 style="font-size: 28px; font-weight: 900; color: #ffffff;">Welcome, PDM Scholar!</h2>
+          <p style="color: #93c5fd; font-size: 16px; margin-top: -8px;">Student ID: <span id="display-student-id" style="font-family: var(--font-mono); font-weight: 700; color: #ffffff;">2024-01048</span></p>
+
+          <div style="background: rgba(30, 41, 59, 0.7); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 16px; padding: 20px; text-align: left; margin: 16px 0;">
+            <div style="font-size: 13px; font-weight: 700; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px;">Enrolled Degree Program</div>
+            <div style="font-size: 18px; font-weight: 800; color: #ffffff;">BS in Information Technology (BSIT)</div>
+            <div style="font-size: 14px; color: #38bdf8; font-weight: 600; margin-top: 4px;">Subject: IT31A - Systems Integration & Architecture</div>
+          </div>
+
+          <button type="button" id="logout-btn" class="login-btn" style="background: rgba(255, 255, 255, 0.15); box-shadow: none; border: 1px solid rgba(255, 255, 255, 0.2);">
+            <span>Sign Out</span>
+          </button>
+        </div>
+      </section>
+
     </main>
 
-    <hr style="border: 0; border-top: 1px solid #ddd; margin: 24px 0 16px 0;">
-
-    <!-- Footer -->
-    <footer style="font-size: 12px; color: #777;">
-      Pambayang Dalubhasaan ng Marilao &bull; IT31A Version Control Demo &bull; 4-Student Git Relay
+    <!-- Kiosk Footer -->
+    <footer class="kiosk-footer">
+      Pambayang Dalubhasaan ng Marilao &bull; Version Control Demo Teaching Activity &bull; 4-Student Git Relay
     </footer>
 
   </div>
 
+  <!-- Scripts -->
   <script src="src/js/api.js"></script>
   <script src="src/js/router.js"></script>
   <script src="src/js/auth_button.js"></script>
+  <script>
+    // Live Clock updater
+    function updateClock() {
+      const now = new Date();
+      const el = document.getElementById('clock');
+      if (el) {
+        el.textContent = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+      }
+    }
+    updateClock();
+    setInterval(updateClock, 1000);
+  </script>
 </body>
 </html>

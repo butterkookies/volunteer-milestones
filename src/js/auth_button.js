@@ -1,9 +1,20 @@
 /**
- * PDM Kiosk Portal - Interactive Auth Button
- * STATUS: Inactive (Action Not Connected)
- * 
- * Student D (The Activator) will connect the 3D button click action
- * to authenticate students and grant access to the portal!
+ * PDM Kiosk Portal - Interactive Auth Button (Student D: The Activator)
+ * Task: Activate the interactive 3D Log In button in auth_button.js
+ *       to validate student credentials and trigger entry.
  */
 
-console.log("Auth button inactive on main branch. Waiting for Student D milestone.");
+// Connect Interactive Log In Button Action
+const loginBtn = document.getElementById('login-btn');
+
+if (loginBtn) {
+  loginBtn.addEventListener('click', () => {
+    const idInput = document.getElementById('student-id');
+    const passInput = document.getElementById('password');
+
+    const id = idInput ? idInput.value.trim() : '';
+    const pass = passInput ? passInput.value.trim() : '';
+
+    authenticateUser(id, pass);
+  });
+}
