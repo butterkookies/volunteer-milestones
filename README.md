@@ -1,97 +1,64 @@
-# 🎓 PDM Tablet Kiosk Portal — 4-Volunteer Git Relay Activity
+# 🎓 PDM Tablet Kiosk Portal — Frontend & Backend Git Relay
 
 > **Classroom Demo Teaching Activity**  
 > **Course:** IT31A — Systems Integration & Architecture  
 > **Topic:** Version Control Systems (Git & GitHub Collaboration)  
-> **Mission:** Build and deploy the Pambayang Dalubhasaan ng Marilao (PDM) Student Self-Service Kiosk Login feature as a 4-person Git relay team.  
+> **Mission:** Build and deploy the Pambayang Dalubhasaan ng Marilao (PDM) Student Self-Service Kiosk Login feature as a Frontend & Backend Git relay team.  
 > **GitHub Repo:** [https://github.com/butterkookies/volunteer-milestones.git](https://github.com/butterkookies/volunteer-milestones.git)
 
 ---
 
-## 📁 Flat Root Directory Structure
+## 📁 Project Directory Structure
 
 ```text
 C:\Andrei.dev\Projects\demo-teaching-act\
 │
-├── index.html                      # Main Kiosk Viewport (Kiosk Tablet Frame)
-├── base.css                        # Base resets, variables, and typography
-├── layout.css                      # Layout structure & card styling
-├── api.js                          # Mock student authentication logic
-├── router.js                       # Client-side view toggle (Login ⟷ Portal)
-├── portal.html                     # Authenticated student dashboard component
+├── index.html                      # Main Kiosk Viewport (Plain wireframe on main)
 ├── README.md                       # This instruction guide
 │
-├── theme.css                       # 🟦 Student A's Target (UNTRACKED)
-├── pdm.png                         # 🟪 Student B's Target (UNTRACKED)
-├── login_form.html                 # 🟦 Student C's Target (UNTRACKED)
-├── auth_button.js                  # 🟩 Student D's Target (UNTRACKED)
+├── frontend\                       # 🟦 Volunteer 1: Frontend Folder (UNTRACKED)
+│   ├── theme.css                   # Collegiate blue gradient theme & status bar
+│   └── pdm.png                     # Official PDM College Crest
 │
-└── volunteer-milestones\           # Pre-packaged backup assets
+└── backend\                        # 🟩 Volunteer 2: Backend Folder (UNTRACKED)
+    └── auth.js                     # Interactive 3D login button & portal logic
 ```
 
 ---
 
-## 👥 4 Volunteer Relay Roles & Simple Git Commands
+## 👥 2 Volunteer Relay Roles & Realistic Git Commands
 
-Walang folders na kailangang i-type! Direktang filename lang ang ilalagay ng bawat volunteer:
-
-### 🟦 Student A: The Stylist (Milestone 1)
-- **Role:** Styles the tablet kiosk screen with PDM's collegiate blue theme and top status bar.
-- **Target File:** `theme.css`
+### 🟦 Volunteer 1: The Frontend Developer (Theme & Branding)
+- **Role:** Adds the collegiate blue theme, glassmorphic status bar, card styling, and official PDM crest.
+- **Target Folder:** `frontend/`
 - **Commands:**
   ```bash
   git status
-  git add theme.css
+  git add frontend/
   git status
-  git commit -m "style(ui): add collegiate blue gradient theme and status bar"
+  git commit -m "feat(frontend): add PDM collegiate blue theme and official crest"
   git push origin main
   ```
+- **Live Vercel Result:** Refresh the live URL &rarr; The plain white wireframe transforms into a stunning, glowing, collegiate blue tablet kiosk with the official PDM crest!
 
 ---
 
-### 🟪 Student B: The Brand (Milestone 2)
-- **Role:** Mounts the official PDM college crest onto the kiosk brand header.
-- **Target File:** `pdm.png`
+### 🟩 Volunteer 2: The Backend Developer (Authentication & Logic)
+- **Role:** Activates the interactive 3D Log In button, validates student credentials, and unlocks the student portal.
+- **Target Folder:** `backend/`
 - **Commands:**
   ```bash
   git status
-  git add pdm.png
+  git add backend/
   git status
-  git commit -m "feat(brand): mount official PDM college crest onto kiosk header"
+  git commit -m "feat(backend): activate interactive login and student portal"
   git push origin main
   ```
+- **Live Vercel Result & Finale:** Refresh the live URL &rarr; The green 3D button is active! Volunteer 2 enters credentials, clicks the button, and opens the PDM Scholar Dashboard with celebratory verification! 🎉
 
 ---
 
-### 🟦 Student C: The Architect (Milestone 3)
-- **Role:** Builds the student credentials card with Student ID Number and Password input fields.
-- **Target File:** `login_form.html`
-- **Commands:**
-  ```bash
-  git status
-  git add login_form.html
-  git status
-  git commit -m "feat(auth): build student credentials form card"
-  git push origin main
-  ```
-
----
-
-### 🟩 Student D: The Activator (Milestone 4)
-- **Role:** Activates the interactive 3D Log In button to validate student credentials and trigger entry.
-- **Target File:** `auth_button.js`
-- **Commands:**
-  ```bash
-  git status
-  git add auth_button.js
-  git status
-  git commit -m "feat(ui): activate interactive 3D login button action"
-  git push origin main
-  ```
-
----
-
-## 💡 The 3 Professional Habits Reinforced
-1. **Commit Small, Commit Often:** Each student saves a single logical piece of work.
-2. **Write Meaningful Messages:** Clear commit messages tell groupmates exactly what changed.
-3. **Review Together:** Verify code changes before merging to prevent overwriting each other!
+## 💡 The Professional Git Habits Reinforced
+1. **Separation of Concerns:** Frontend and Backend developers work in their dedicated folders without merge conflicts.
+2. **Git GPS (`git status`):** Check status before staging (RED) and after staging (GREEN).
+3. **Meaningful Commit Messages:** Conventional commit prefixes (`feat(frontend):`, `feat(backend):`).
